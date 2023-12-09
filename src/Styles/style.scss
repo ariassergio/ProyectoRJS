@@ -1,0 +1,54 @@
+/* styles.scss */
+
+.ItemListContainer {
+    height: 50%;
+    width: 50%;
+  }
+  
+    
+.product-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Otra opción: justify-content: space-around; */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    height: auto;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .product-details {
+        text-align: center;
+        margin-top: 20px;
+        width: 400px;
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+            
+        p {
+            margin-bottom: 5px;
+        }
+        button{
+            border: none;
+            outline: 0;
+            padding: 10px;
+            color: #070202;
+            background-color:yellow;
+            text-align: center;
+            cursor: pointer;
+            width: 300px;
+            font-size: 15px;
+        }
+        button:hover{
+            opacity: 0.7;
+            color: red;
+        }
+    }
+}
