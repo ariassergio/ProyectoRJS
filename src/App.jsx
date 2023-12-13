@@ -3,6 +3,8 @@ import Navbar from './Components/Navbar';
 import ItemListContainer from './Components/ItemListContainer'
 import CartWidget from './Components/CartWidget';
 import Swal from 'sweetalert2';
+import { ProductList } from './Components/ProductList';
+
 
 
 
@@ -26,6 +28,7 @@ function App() {
     <div className="App">
       <Navbar />
       <ItemListContainer productos={productosMessage}/>
+      <ProductList/>
     </div>
   );
 }

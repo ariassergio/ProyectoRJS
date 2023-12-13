@@ -1,3 +1,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Globales */
+*::after,
+*::before,
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Main */
+.container-items {
+	/*display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 50px;
+    width: auto;
+    margin: 15px;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr)); /* Cambio en las columnas del grid */
+    gap: 50px;
+    width: 90%; /* Ajustar el ancho del contenedor */
+    margin: 15px auto; /* Centrar el contenedor */
+    
+}
+
+.item {
+	/*border-radius: 10px;
+    border-color: #000;*/
+    border-radius: 10px;
+  border-color: #000;
+  overflow: hidden; /* Asegurar que el contenido no se desborde */
+  display: flex; /* Hacer que el contenido se comporte como una fila */
+  flex-direction: column; /* Alinear el contenido en columna */
+  justify-content: space-between; /* Espaciado entre los elementos */
+    
+    
+}
+
+.item:hover {
+	box-shadow: 0 10px 20px yellow;
+}
+
+.item img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+	transition: all 0.5s;
+    
+    
+}
+
+.item figure {
+	overflow: hidden;
+    
+}
+
+.item:hover img {
+	transform: scale(1.2);
+}
+
+.info-product {
+	padding: 15px 30px;
+	line-height: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.price {
+	font-size: 18px;
+	font-weight: 900;
+    color: red;
+}
+
+.info-product button {
+	border: none;
+	background: none;
+	background-color: #000;
+	color: #fff;
+	padding: 15px 10px;
+	cursor: pointer;
+}
+
