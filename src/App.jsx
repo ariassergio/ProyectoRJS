@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import ItemListContainer from './Components/ItemListContainer'
 import CartWidget from './Components/CartWidget';
 import Swal from 'sweetalert2';
 import { ProductList } from './Components/ProductList';
+
 
 
 
@@ -26,9 +28,24 @@ function App() {
 
   return (
     <div className="App">
+    <BrowserRouter>
       <Navbar />
-      <ItemListContainer productos={productosMessage}/>
-      <ProductList/>
+      
+      
+      <Routes>
+      <Route
+      path='/ProductList'
+      element={
+        <>
+          <ItemListContainer productos={productosMessage} />
+          <ProductList />
+        </>
+
+      }
+      />
+       
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }

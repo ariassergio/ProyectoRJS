@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import { BiAlignRight, BiCart, BiX } from 'react-icons/bi';
 
@@ -42,9 +43,9 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#Productos" className="hover:text-gray-300">
+              <Link to="/ProductList" className="hover:text-gray-300">
                 Productos
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#Servicios" className="hover:text-gray-300">
