@@ -26,26 +26,24 @@ function App() {
     }
   }, [showAlert, greetingMessage]);
 
+  
   return (
     <div className="App">
-    <BrowserRouter>
-      <Navbar />
-      
-      
-      <Routes>
-      <Route
-      path='/ProductList'
-      element={
-        <>
-          <ItemListContainer productos={productosMessage} />
-          <ProductList />
-        </>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route
+            path='/ProductList'
+            element={
+              <>
+                <ItemListContainer productos={productosMessage} />
+                <ProductList />
+              </>
 
-      }
-      />
-       
-      </Routes>
-    </BrowserRouter>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

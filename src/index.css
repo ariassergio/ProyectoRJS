@@ -70,18 +70,54 @@
 	gap: 10px;
 }
 
+
 .price {
 	font-size: 18px;
 	font-weight: 900;
     color: red;
 }
 
-.info-product button {
-	border: none;
-	background: none;
+.infobutton{
+	
+	width: 80px; /* Ancho del botón */
+	height: 30px; /* Alto del botón */
+	display: flex; /* Usamos flexbox para centrar el contenido */
+	border-radius: 10px; /* Radio de las esquinas del borde */
+  	border: 1px solid #000; /* Agregamos un borde para visualizar mejor el botón */
+ 	justify-content: center; /* Centramos horizontalmente */
+	align-items: center; /* Centramos verticalmente */
+	background-color: #000;
+	color: #fff;
+	
+}
+.infobutton:hover{
+	box-shadow: 0px 0px 0px 2px #00fff2;
+}
+.buttontext{
+	font-size: 16px;
+	
+}
+
+.buttoncarrito {
+	width: 150px; /* Ancho del botón */
+	height: 30px; /* Alto del botón */
+	display: flex; /* Usamos flexbox para centrar el contenido */
+	border-radius: 10px; /* Radio de las esquinas del borde */
+  	border: 1px solid #000; /* Agregamos un borde para visualizar mejor el botón */
+ 	justify-content: center; /* Centramos horizontalmente */
+	align-items: center; /* Centramos verticalmente */
 	background-color: #000;
 	color: #fff;
 	padding: 15px 10px;
 	cursor: pointer;
 }
+.buttoncarrito:hover{
+	box-shadow: 0px 0px 0px 2px #00fff2;
+}
 
+/*************************** Etilos del Modal ********************************/
+.modal{
+	width: auto;
+	height: auto;
+	align-items: center;
+}
