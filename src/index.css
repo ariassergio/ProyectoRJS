@@ -12,6 +12,11 @@
 }
 
 /* Main */
+.proddisp{
+	text-align: center;
+	margin: 15px;
+	font-size: 30px;
+}
 .container-items {
 	/*display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -31,6 +36,8 @@
     border-color: #000;*/
     border-radius: 10px;
   border-color: #000;
+  
+  box-shadow: 0 10px 20px #003cff;
   overflow: hidden; /* Asegurar que el contenido no se desborde */
   display: flex; /* Hacer que el contenido se comporte como una fila */
   flex-direction: column; /* Alinear el contenido en columna */

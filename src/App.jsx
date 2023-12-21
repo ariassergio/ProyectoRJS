@@ -7,9 +7,6 @@ import Swal from 'sweetalert2';
 import { ProductList } from './Components/ProductList';
 
 
-
-
-
 function App() {
   const greetingMessage = "Bienvenido a la tienda del campeón del mundo! ⭐⭐⭐";
   const productosMessage = "Productos disponibles"
@@ -32,16 +29,13 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route
-            path='/ProductList'
-            element={
-              <>
-                <ItemListContainer productos={productosMessage} />
-                <ProductList />
-              </>
-
-            }
+          <Route path='/' element={<>
+              <ItemListContainer productos={productosMessage} />
+              <ProductList />
+              </>}
           />
+        
+          
         </Routes>
       </BrowserRouter>
     </div>

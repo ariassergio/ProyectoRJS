@@ -3,7 +3,7 @@ import React from 'react';
 function ItemListContainer (props){
 
   return (
-    <div>
+    <div className='proddisp'>
       <p>{props.productos}</p>
     </div>
   );

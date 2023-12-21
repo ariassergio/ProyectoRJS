@@ -38,23 +38,18 @@ const Navbar = () => {
         ) : (
           <ul className="flex space-x-4">
             <li>
-              <a href="#Home" className="hover:text-gray-300">
-                Inicio
-              </a>
-            </li>
-            <li>
-              <Link to="/ProductList" className="hover:text-gray-300">
+              <Link to href="/" className="hover:text-gray-300">
                 Productos
               </Link>
             </li>
             <li>
               <a href="#Servicios" className="hover:text-gray-300">
-                Servicios
+                Indumentaria
               </a>
             </li>
             <li>
               <a href="#Contactos" className="hover:text-gray-300">
-                Contactos
+                Accesorios
               </a>
             </li>
             <li>
@@ -67,23 +62,18 @@ const Navbar = () => {
           <div className="flex flex-col">
             <ul className="flex flex-col space-y-2">
               <li>
-                <a href="#Home" className="hover:text-gray-300">
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="#Productos" className="hover:text-gray-300">
+                <Link to href="/" className="hover:text-gray-300">
                   Productos
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#Servicios" className="hover:text-gray-300">
-                  Servicios
+                  Indumentaria
                 </a>
               </li>
               <li>
                 <a href="#Contactos" className="hover:text-gray-300">
-                  Contactos
+                  Accesorios
                 </a>
               </li>
               <li>

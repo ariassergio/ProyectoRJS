@@ -9,6 +9,10 @@ export const ProductList = () =>{
 	const [selectedProduct, setSelectedProduct] = useState(null); // Nuevo estado para el producto seleccionado
 	const categories = [...new Set(data.map((product) => product.categoria))];
 
+
+	
+
+
 	const filterProducts = (category) => {
 		if (category === 'all') {
 		setFilteredProducts(products);
