@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import ItemListContainer from './Components/ItemListContainer'
 import CartWidget from './Components/CartWidget';
 import Swal from 'sweetalert2';
 import { ProductList } from './Components/ProductList';
+import ItemDetailsContainer from './Components/ItemDetailsContainer';
 
 
 function App() {
@@ -34,8 +35,11 @@ function App() {
               <ProductList />
               </>}
           />
-        
-          
+          <Route path="/productos/:categoryId" element={<ProductList/>} />
+          <Route path='/item/item:Id' element={ItemDetailsContainer}/>
+
+          <Route path='/not-found' element={<h2>Not found</h2>} />
+          <Route path='*' element={<Navigate to={"/not-found"}/>}/>
         </Routes>
       </BrowserRouter>
     </div>

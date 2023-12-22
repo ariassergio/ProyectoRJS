@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import { BiAlignRight, BiCart, BiX } from 'react-icons/bi';
 
+
 const Navbar = () => {
   const [isResponsive, setIsResponsive] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -38,19 +39,22 @@ const Navbar = () => {
         ) : (
           <ul className="flex space-x-4">
             <li>
-              <Link to href="/" className="hover:text-gray-300">
+              <Link 
+                to ={"/"} className="hover:text-gray-300">
                 Productos
               </Link>
             </li>
             <li>
-              <a href="#Servicios" className="hover:text-gray-300">
+              <Link 
+                to ={"/productos/Indumentaria"} className="hover:text-gray-300">
                 Indumentaria
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#Contactos" className="hover:text-gray-300">
+              <Link 
+                to ={"/productos/Accesorios"} className="hover:text-gray-300">
                 Accesorios
-              </a>
+              </Link>
             </li>
             <li>
               <CartWidget />
@@ -62,19 +66,22 @@ const Navbar = () => {
           <div className="flex flex-col">
             <ul className="flex flex-col space-y-2">
               <li>
-                <Link to href="/" className="hover:text-gray-300">
+                <Link 
+                  to={"/"} className="hover:text-gray-300">
                   Productos
                 </Link>
               </li>
               <li>
-                <a href="#Servicios" className="hover:text-gray-300">
+                <Link 
+                  to ={"/productos/Indumentaria"} className="hover:text-gray-300">
                   Indumentaria
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#Contactos" className="hover:text-gray-300">
+                <Link 
+                  to ={"/productos/Accesorios"} className="hover:text-gray-300">
                   Accesorios
-                </a>
+                </Link>
               </li>
               <li>
                 <CartWidget />
