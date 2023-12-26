@@ -5,7 +5,8 @@ import ItemListContainer from './Components/ItemListContainer'
 import CartWidget from './Components/CartWidget';
 import Swal from 'sweetalert2';
 import { ProductList } from './Components/ProductList';
-import ItemDetailsContainer from './Components/ItemDetailsContainer';
+import ProductDetails from './Components/ProductDetails';
+
 
 
 function App() {
@@ -30,16 +31,16 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<>
+        <Route path='/' element={<>
               <ItemListContainer productos={productosMessage} />
               <ProductList />
+              
               </>}
           />
-          <Route path="/productos/:categoryId" element={<ProductList/>} />
-          <Route path='/item/item:Id' element={ItemDetailsContainer}/>
-
+          <Route path="/productos/:categoryId" element={<ProductList />} />
+          <Route path="/productos/:productId" element={<ProductDetails />} /> 
           <Route path='/not-found' element={<h2>Not found</h2>} />
-          <Route path='*' element={<Navigate to={"/not-found"}/>}/>
+          <Route path='*' element={<Navigate to="/not-found" />} />
         </Routes>
       </BrowserRouter>
     </div>

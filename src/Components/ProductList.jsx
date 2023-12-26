@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { data } from '../data/data';
-import { useParams} from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import ProductDetails from './ProductDetails';
 
 
 
 export const ProductList = () => {
-
 	const { categoryId } = useParams();
+    const navigate = useNavigate();
+    const location = useLocation();
 
   	let filteredProducts = data;
 
@@ -18,28 +21,29 @@ export const ProductList = () => {
 	
     const [products] = useState(data);
     const [selectedProduct, setSelectedProduct] = useState(null); // Nuevo estado para el producto seleccionado
+    const [previousLocation, setPreviousLocation] = useState(null);
 
     const showProductDetails = (product) => {
-        setSelectedProduct(product); // Establecer el producto seleccionado al hacer clic en "Info"
+        setSelectedProduct(product); // Esto muestra la ventana modal
+        setPreviousLocation(location.pathname);
+        navigate(`/productos/${product.id}`);
     };
 
     const closeProductDetails = () => {
         setSelectedProduct(null); // Cerrar la ventana de detalles al hacer clic en algún botón de cierre o fuera de la ventana modal
+        if (previousLocation) {
+            navigate(previousLocation); // Volver a la ubicación anterior al cerrar el modal
+        } else {
+            navigate('/'); // Si no hay ubicación anterior, redirigir a la página principal
+        }
     };
 
 
-	/*
-    useEffect(() => {
-        // Aquí puedes realizar cualquier lógica adicional cuando los productos cambien
-        // Por ejemplo, si necesitas cargar los productos desde una fuente externa
-        // Simplemente actualiza los productos usando setProducts(newData)
-    }, []);
-	*/
-
+	
 
     return (
+       
         <div className='container-items'>
-            {/* Lista completa de productos */}
             {filteredProducts.map((product) => (
                 <div key={product.id} className='item'>
                     <figure>
@@ -48,9 +52,12 @@ export const ProductList = () => {
                     <div className='info-product'>
                         <h2>{product.name}</h2>
                         <p className='price'>${product.price}</p>
-                        <button className='infobutton' onClick={() => showProductDetails(product)}>
-                            <span className='buttontext'>Info</span>
-                        </button>
+                         {/* Usar Link para dirigir al detalle del producto */}
+                         <Link to={`/productos/${product.id}`}>
+                            <button className='infobutton' onClick={() => showProductDetails(product)}>
+                                <span className='buttontext'>Info</span>
+                            </button>
+                        </Link>
                         <button className='buttoncarrito'>
                             <span >Agregar al carrito</span>
                         </button>
