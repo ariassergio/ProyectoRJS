@@ -37,7 +37,7 @@ function App() {
               
               </>}
           />
-          <Route path="/productos/:categoryId" element={<ProductList />} />
+          <Route path="/productos/:categoryId" element={<><ItemListContainer productos={productosMessage} /> <ProductList /></>} />
           <Route path="/productos/:productId" element={<ProductDetails />} /> 
           <Route path='/not-found' element={<h2>Not found</h2>} />
           <Route path='*' element={<Navigate to="/not-found" />} />
